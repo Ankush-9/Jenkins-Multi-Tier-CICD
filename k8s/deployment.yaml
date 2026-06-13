@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: crm-container
-          image: haidertelusko/crm-app:latest
+          image: ankush6078/crm-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8484
@@ -26,4 +26,4 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               value: "crmuser"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "1q2w3e4r"
+              value: "1234anku"
