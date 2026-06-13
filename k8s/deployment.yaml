@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm-deployment
+  labels:
+    app: crm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crm
+  template:
+    metadata:
+      labels:
+        app: crm
+    spec:
+      containers:
+        - name: crm-container
+          image: haidertelusko/crm-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8484
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://crmdb.cx2guougs2rh.ap-south-1.rds.amazonaws.com:3306/mydb"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "crmuser"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "1q2w3e4r"

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Customer Information</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #eef2f3, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h3 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        a.btn {
+            display: inline-block;
+            background: #1e90ff;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        a.btn:hover {
+            background: #0b76d1;
+            transform: scale(1.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+
+        thead th {
+            padding: 12px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        tbody tr {
+            background: #f7f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #e8f4ff;
+            transform: scale(1.01);
+        }
+
+        td {
+            padding: 12px;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .btn-update {
+            background: #1abc9c;
+            color: white;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-update:hover {
+            background: #0f9d82;
+        }
+
+        .btn-delete {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: #cf3a2b;
+        }
+
+        .row-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h3>Customer Information</h3>
+        <hr>
+
+        <!-- Add new customer button -->
+        <a th:href="@{/showform}" class="btn">Add NEW Customer</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="tempCustomer : ${customers}">
+
+                    <td th:text="${tempCustomer.firstName}"></td>
+                    <td th:text="${tempCustomer.lastName}"></td>
+                    <td th:text="${tempCustomer.city}"></td>
+
+                    <td>
+                        <div class="row-actions">
+
+                            <!-- Update button -->
+                            <form th:action="@{/updateform}" method="GET">
+                                <input type="hidden" name="id" th:value="${tempCustomer.id}" />
+                                <button type="submit" class="btn-update">Update Data</button>
+                            </form>
+
+                            <!-- Delete button -->
+                            <form th:action="@{/deleteData}" method="GET">
+                                <input type="hidden" name="id" th:value="${tempCustomer.id}" />
+                                <button type="submit" class="btn-delete"
+                                    onclick="return confirm('Are you sure you want to delete this customer info permanently?')">
+                                    Delete Data
+                                </button>
+                            </form>
+
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>
