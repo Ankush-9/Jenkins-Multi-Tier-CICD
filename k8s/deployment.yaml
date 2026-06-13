@@ -22,7 +22,7 @@ spec:
             - containerPort: 8484
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://crmdb.cx2guougs2rh.ap-south-1.rds.amazonaws.com:3306/mydb"
+              value: "jdbc:mysql://crm-mysql.cdeeck8aoy10.ap-south-1.rds.amazonaws.com:3306/mydb"
             - name: SPRING_DATASOURCE_USERNAME
               value: "crmuser"
             - name: SPRING_DATASOURCE_PASSWORD
