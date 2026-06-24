@@ -1,0 +1,14 @@
+# Multi-tier-App-Jenkins-CICD:
+
+› Usable elements -> AWS + EKS(K8S) + Docker + DockerHub + Maven + Git + Jenkins
+› Create a new VPC
+› Create private and public subnets
+› Create InternetGateWay and NatGateWay 
+› Create RDS MySQL inside the same VPC(private)
+› Create Jenkins Ec2 server in public subnet
+› Install Jenkins, Docker, kubectl, aws CLI on Ec2
+› Connect Jenkins —> EKS —> RDS 
+
+*Sign in to AWS Web Console
+
+
