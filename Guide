@@ -11,4 +11,29 @@
 
 *Sign in to AWS Web Console
 
+# VPC Creation Steps :
+
+› VPC name : multi-tier-cicd-vpc  
+› CIDR Range : 10.0.0.0/16
+› 4 subnets —> 2 public subnets and 2 private subnets
+› public-subnet-a(10.0.1.0/24) and public-subnet-b(10.0.2.0/24)
+› private-subnet-a(10.0.3.0/24) and private-subnet-b(10.0.4.0/24)
+› Edit VPC settings : Enable DNS hostname
+› IGW (Internet Gateway) : multi-tier-cicd-IGW
+› Attach IGW to multi-tier-cicd-vpc (for Accessibility)
+› Go to Route table 
+› Rename the pc associated route table to public-route-table
+› Select Routes —> Edit Routes —> All Traffic(0.0.0.0) to IGW (multi-tier-cicd-IGW) 
+› Now go to the subnet associations 
+› Edit subnet associations and attach both public subnets —> Save Association
+› NAT Gateway : multi-tier-cicd-NGW
+› Availability Mode : Zonal
+› Subnet : public-subnet-a
+› Allocate public ip > Create Nat Gateway
+› Create a Route Table : private-route-table
+› Edit Routes : 0.0.0.0 > Nat Gateway
+› Edit Subnet Assoiations : Add both private subnets (a and b)
+› So,by now VPC has been fully configured
+
+
 
