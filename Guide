@@ -35,5 +35,21 @@
 › Edit Subnet Assoiations : Add both private subnets (a and b)
 › So,by now VPC has been fully configured
 
+# Cluster Creation Steps :
+
+› We can either use an EC2 instance and install dependencies like kubectl ,eksctl and aws-cli or, we can directly create a cluster
+› Open Amazon Elastic Kubernetes Service
+› Cluster > Create Cluster 
+› Configuration : Custom Configuration
+› Name : crmeks
+› Cluster Configuration : Latest recommended
+› Role : AmazonEKSAutoClusterRole (Create if not present)
+› Next, VPC : multi-tier-cicd-vpc
+› Subnets : public-subnet-a and public-subnet-b
+› Security Group : default
+› Cluster Endpoint Access : Public
+› Next, Keep default
+› Next , Keep Default add EBS CSI only
+› Next, Next, Preview and Create Cluster which will take some time 
 
 
