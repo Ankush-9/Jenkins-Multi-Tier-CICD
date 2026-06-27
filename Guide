@@ -52,4 +52,23 @@
 › Next , Keep Default add EBS CSI only
 › Next, Next, Preview and Create Cluster which will take some time 
 
+# AWS-RDS Configuration Steps :
+
+› Go to Subnet Groups and Create a DB Subnet Group : crm-db-subnet-group
+› Availability zones : ap-south-1a and ap-south-b
+› subnets : private-subnet-a and private-subnet-b
+› Go to Amazon RDS
+› Databases > Create Database
+› Engine : MySQL
+› Templates : dev/test
+› Availability and durability : Single A-Z
+› Db-instance-identifier : crm-mysql
+› Master-username : crmuser
+› Password : generic-password
+› Allocated Storage : 20
+› VPC : multi-tier-cicd-vpc
+› Subnet-group : crm-db-subnet-group
+› VPC-Security-group : Create New : rds-sg
+› Create database
+
 
