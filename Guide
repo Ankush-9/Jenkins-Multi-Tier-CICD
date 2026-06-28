@@ -72,3 +72,24 @@
 › Create database
 
 
+# Jenkins-Server-Creation Steps:
+
+› Go to Ec2 > Launch Instance : jenkins-server
+› AMI : ubuntu
+› Instance Type : t3.medium
+› key-pair : as per choice
+› VPC : multi-tier-cicd-vpc
+› subnet : public-subnet-a
+› Auto Assign Public IP : Enable
+› Security Group > Create Security Group > crm-sg
+› ADD : 8080 , 50000
+› Create Instance
+› Connect to this Jenkins-machine
+
+› We have to install the following in jenkins-server
+~ java, jenkins, docker, kubectl, aws-cli (Use Ai Tools for installation help)
+› Connect to the Jenkins Server 
+› and perform installation of suggested 
+› Configure New password and other setup requiremnts
+
+
