@@ -92,4 +92,17 @@
 › and perform installation of suggested 
 › Configure New password and other setup requiremnts
 
+# EKS Node Groups Creation :
+
+*These are basically the worker node configurations
+› By now, our EKS cluster is active
+› Click on created cluster i.e ekscrm
+› Under Compute tab we have Node groups
+› Clock on “Add”
+› Name : crmnodes
+› Node IAM role : Create and Add , Next
+› Node Group Scaling  Desired : 2 , Min : 1 , Max : 3 , Next
+› Subnets : private-subnet-a and private-subnet-b
+› Next and Create
+
 
