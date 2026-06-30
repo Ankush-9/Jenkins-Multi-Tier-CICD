@@ -105,4 +105,15 @@
 › Subnets : private-subnet-a and private-subnet-b
 › Next and Create
 
+# MySql Db Configuratons in Jenkins-VM:
+
+› By now our database is ready for use
+› We have to enable MySQL/Aurora and All Traffic inbound rules for Jenkins - Server
+› Next up, we have to install MySQL client in Jenkins VM
+› Copy database endpoint 
+› Connect to MySQL Database as :
+› mysql -h <database-endpoint> -u crmuser -p
+› Enter your password and we’ll be in a Sql Environment configuring our DB
+› We had created an RDS-SG which needs to have MYSQL/Aurora or All Traffic as an inbound security rule
+
 
