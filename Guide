@@ -116,4 +116,18 @@
 › Enter your password and we’ll be in a Sql Environment configuring our DB
 › We had created an RDS-SG which needs to have MYSQL/Aurora or All Traffic as an inbound security rule
 
+› Connect to VM and hit the following command:
+
+CREATE DATABASE mydb;
+
+USE mydb;
+
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    city VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
 
