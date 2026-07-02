@@ -130,4 +130,6 @@ CREATE TABLE customers (
     PRIMARY KEY (id)
 );
 
+› We’ll be using an application from the GitHub as : https://github.com/Haider7214/springboot-fullstack
+› We’ll be cloning this to our repo and we’ll have to make changes in the deployment.yml for the db endpoint as jdbc:mysql://<database-endpoint>:3306/mydb
 
