@@ -133,3 +133,20 @@ CREATE TABLE customers (
 › We’ll be using an application from the GitHub as : https://github.com/Haider7214/springboot-fullstack
 › We’ll be cloning this to our repo and we’ll have to make changes in the deployment.yml for the db endpoint as jdbc:mysql://<database-endpoint>:3306/mydb
 
+# Docker-Hub Credentials Configuration :
+
+› Open Jenkins Server 
+› Click on settings > credentials
+› Add Credential
+› Username and Password
+› Add the credentials
+
+# Create IAM User (or Role) for Jenkins
+
+~Attach these policies:
+› AmazonEKSClusterPolicy
+› AmazonEKSWorkerNodePolicy
+› AmazonEC2ContainerRegistryReadOnly (
+› AmazonS3ReadOnlyAccess (not needed but ok)
+
+
