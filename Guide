@@ -149,4 +149,21 @@ CREATE TABLE customers (
 › AmazonEC2ContainerRegistryReadOnly (
 › AmazonS3ReadOnlyAccess (not needed but ok)
 
+# INSTALL REQUIRED PLUGIN (VERY IMPORTANT)
+
+› Go to : Manage Jenkins → Plugins → Available
+› Install: AWS Credentials Plugin and Pipeline: AWS Steps Plugin
+
+› Add rds secret also 
+> credential id rds-password
+
+› Add AWS Credentials in Jenkins
+› Go to:
+> Manage Jenkins → Credentials → Global → Add Credentials
+> Type: AWS Credentials
+> Fill: ID: aws-eks-creds
+> Access Key ID: AKIA...
+> Secret Access Key: xxxx
+> Save
+
 
