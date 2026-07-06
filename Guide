@@ -166,4 +166,9 @@ CREATE TABLE customers (
 > Secret Access Key: xxxx
 > Save
 
+*Install Stage View and Blue Ocean Plugin for better Visuals
+*Run the CICD job and after Successful build and success status › Open Jenkins VM terminal 
+*Hit kubectl get svc › Copy the load balancer URL and on the browser hit as :
+› <load-balancer-url>/crm/cxlist 
+
 
